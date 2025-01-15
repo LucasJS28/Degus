@@ -11,7 +11,8 @@
     <style>
         body {
             margin: 0;
-            padding-top: 60px; /* Ajuste para que el contenido no se oculte detrás del menú */
+            padding-top: 60px;
+            /* Ajuste para que el contenido no se oculte detrás del menú */
         }
 
         .menu-container {
@@ -45,7 +46,8 @@
         }
 
         .activecolor {
-            background-color: #04AA6D; /* Fondo verde cuando está activo */
+            background-color: #04AA6D;
+            /* Fondo verde cuando está activo */
         }
 
         .topnav .icon {
@@ -70,7 +72,8 @@
         }
 
         .dropdown .dropbtn::after {
-            content: " \25BC"; /* Flecha hacia abajo */
+            content: " \25BC";
+            /* Flecha hacia abajo */
             font-size: 12px;
             margin-left: 5px;
         }
@@ -94,7 +97,8 @@
         }
 
         .dropdown:hover .dropdown-content {
-            display: block; /* Mostrar el menú desplegable al pasar el mouse */
+            display: block;
+            /* Mostrar el menú desplegable al pasar el mouse */
         }
 
         .topnav a:hover,
@@ -109,6 +113,7 @@
         }
 
         @media screen and (max-width: 600px) {
+
             .topnav a:not(:first-child),
             .dropdown .dropbtn {
                 display: none;
@@ -165,15 +170,223 @@
             max-width: 39px;
             padding: 5px;
         }
+
+
+        
+
+/* Quiénes Somos Section - Avatares */
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+/* Tarjetas generales */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+   
+    color: #333;
+    background-color: #f7f9fc;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #525051;
+}
+
+.section p, .section ul {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+/* Footer */
+.footer {
+    background-color: #3a3a3a;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+
+/* Sección Inicio */
+.inicio {
+    background: url('imagenes/background.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+    margin-top: -25px;
+}
+
+.inicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Capa oscura para mejor visibilidad del texto */
+    z-index: 1;
+}
+
+.inicio .container {
+    position: relative;
+    z-index: 2;
+}
+
+.inicio h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.inicio p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #FF879C;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #FF879C;
+}
+
+/* Sección Qué Hacemos */
+.que-hacemos {
+    padding: 4rem 0;
+    background-color: #f7f9fc;
+    text-align: center;
+}
+
+.que-hacemos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.que-hacemos p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.que-hacemos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.que-hacemos-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.que-hacemos-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.que-hacemos-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.que-hacemos-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #FF879C;
+}
+
+.que-hacemos-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
     </style>
 </head>
 
 <body>
     <div class="menu-container">
         <div class="topnav" id="myTopnav">
-            <a href="#Degus" class="active" onclick="closeMenu()"><img src="imagenes/logo.png" id="logo" alt=""></a>
-            <a href="#QuienesSomos" onclick="closeMenu()">Quienes Somos</a>
-            <a href="#QueHacemos" onclick="closeMenu()">Que Hacemos</a>
+            <a href="#inicio" class="active" onclick="closeMenu()"><img src="imagenes/logo.png" id="logo" alt=""></a>
+            <a href="#quienes-somos" onclick="closeMenu()">Quienes Somos</a>
+            <a href="#que-hacemos" onclick="closeMenu()">Que Hacemos</a>
             <div class="dropdown">
                 <button class="dropbtn">Colabora</button>
                 <div class="dropdown-content">
@@ -188,37 +401,99 @@
         </div>
     </div>
 
-    <section data-aos="fade-up" id="Degus">
-        <h2>Degus</h2>
+    <!-- Inicio -->
+    <section id="inicio" class="inicio">
+        <div class="container">
+            <div class="inicio-content">
+                <h1>Bienvenidos a Fundación Degus</h1>
+                <p>Promovemos el desarrollo integral del ser humano a través de educación, acompañamiento y
+                    microcréditos.</p>
+                <a href="#colabora" class="btn-cta">Descubre cómo colaborar</a>
+            </div>
+        </div>
     </section>
 
-    <section data-aos="fade-up" id="QuienesSomos">
-        <h2>Quienes Somos</h2>
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos" class="section">
+        <div class="container">
+            <h2>Quiénes Somos</h2>
+            <p>Somos una organización sin fines de lucro dedicada a fomentar emprendimientos conscientes y el desarrollo
+                humano integral.</p>
+            <div class="grid">
+                <div class="card">
+                    <img src="imagenes/avatar.png" alt="Álvaro Salas Mena">
+                    <h3>Álvaro Salas Mena</h3>
+                    <p>Director Fundador</p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/avatar.png" alt="Ramona Del Carmen Mena Carvajal">
+                    <h3>Ramona Del Carmen Mena Carvajal</h3>
+                    <p>Tesorera</p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/avatar.png" alt="Antonia Schifferli Salas">
+                    <h3>Antonia Schifferli Salas</h3>
+                    <p>Secretaria</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section data-aos="fade-up" id="QueHacemos">
-        <h2>Que Hacemos</h2>
+    <!-- Qué Hacemos -->
+    <section id="que-hacemos" class="que-hacemos">
+        <div class="container">
+            <h2>Qué Hacemos</h2>
+            <p>Trabajamos para transformar vidas y comunidades a través de nuestras tres áreas principales:</p>
+            <div class="que-hacemos-grid">
+                <div class="que-hacemos-item">
+                    <img src="imagenes/education-icon.png" alt="Educación Integral">
+                    <h3>Educación Integral</h3>
+                    <p>Formación en ciudadanía, economía consciente y desarrollo personal, con asistencia profesional en
+                        diversas áreas.</p>
+                </div>
+                <div class="que-hacemos-item">
+                    <img src="imagenes/human-development-icon.png" alt="Desarrollo Humano">
+                    <h3>Desarrollo Humano</h3>
+                    <p>Acompañamiento profesional para promover el bienestar emocional y la superación personal en cada
+                        individuo.</p>
+                </div>
+                <div class="que-hacemos-item">
+                    <img src="microcredit-icon.png" alt="Microcréditos">
+                    <h3>Microcréditos</h3>
+                    <p>Apoyo financiero para emprendedores que no califican en el sistema bancario tradicional.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section data-aos="fade-up" id="hazte-socio">
-        <h2>Hazte socio</h2>
+    <!-- Colabora -->
+    <section id="hazte-socio" class="section">
+        <h2>Hazte Socio</h2>
     </section>
 
-    <section data-aos="fade-up" id="dona">
-        <h2>Dona</h2>
+    <!-- Colabora -->
+    <section id="dona" class="section">
+        <h2>Donaciones</h2>
+    </section>
+    
+    <section id="programa-empresas" class="section">
+        <h2>Programa Empresas</h2>
     </section>
 
-    <section data-aos="fade-up" id="programa-empresas">
-        <h2>Programa empresas</h2>
-    </section>
-
-    <section data-aos="fade-up" id="Noticias">
+    <section id="Noticias" class="section">
         <h2>Noticias</h2>
     </section>
 
-    <section data-aos="fade-up" id="Redes">
+    <section id="Redes">
         <h2>Redes Sociales</h2>
     </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fundación Degus. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
 
     <script>
         AOS.init();
