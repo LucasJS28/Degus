@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<style>
+   body {
+        margin: 0;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        font-family: Arial;
+    }
+
+    /* Links inside the navbar */
+    .navbar a  {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    /* The dropdown container */
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        /* Important for vertical align on mobile phones */
+        margin: 0;
+        /* Important for vertical align on mobile phones */
+    }
+
+    /* Add a red background color to navbar links on hover */
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+        background-color: red;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Secciones */
+    section {
+        min-height: 100vh;
+        padding: 60px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <a href="#QuienesSomos">Quienes Somos</a>
+        <a href="#QueHacemos">Que Hacemos</a>
+        <div class="dropdown">
+            <button class="dropbtn">Unete a Degus
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#hazte-socio">Hazte Socio</a>
+                <a href="#dona">Dona</a>
+                <a href="#programa-empresas">Programa empresas</a>
+            </div>
+        </div>
+        <a href="#Noticias">Noticias</a>
+        <a href="#Redes">Redes Sociales</a>
+    </div>
+
+    <!-- Sección de Inicio -->
+    <section id="QuienesSomos">
+        <h2>Quienes Somos</h2>
+    </section>
+
+    <section id="QueHacemos">
+        <h2>Que Hacemos</h2>
+    </section>
+
+    <section id="Unete">
+        <h2>Unete a Degus</h2>
+    </section>
+
+    <section id="hazte-socio">
+        <h2>Hazte socio</h2>
+    </section>
+
+    <section id="dona">
+        <h2>Dona</h2>
+    </section>
+
+    <section id="programa-empresas">
+        <h2>Programa empresas</h2>
+    </section>
+
+    <section id="Noticias">
+        <h2>Noticias</h2>
+    </section>
+
+    <section id="Redes">
+        <h2>Redes Sociales</h2>
+    </section>
+
+</body>
+<script>
+    AOS.init();
+
+    const links = document.querySelectorAll('#nav-links a');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Evita el comportamiento predeterminado
+                const targetId = link.getAttribute('href').substring(1); // Obtén el ID del destino
+                const targetSection = document.getElementById(targetId);
+
+                // Realiza un desplazamiento suave a la sección
+                if (targetSection) {
+                    const offset = targetSection.offsetTop; // Posición superior de la sección
+                    const navHeight = document.querySelector('nav').offsetHeight; // Altura del nav
+                    window.scrollTo({
+                        top: offset - navHeight, // Ajusta la posición para compensar el nav
+                        behavior: 'smooth', // Desplazamiento suave
+                    });
+                }
+            });
+        });
+</script>
+
+</html>
