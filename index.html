@@ -14,7 +14,6 @@
             padding-top: 60px; /* Ajuste para que el contenido no se oculte detrás del menú */
         }
 
-        /* Contenedor del menú fijo */
         .menu-container {
             position: fixed;
             top: 0;
@@ -23,7 +22,6 @@
             z-index: 1000;
         }
 
-        /* Estilos para el menú de navegación */
         .topnav {
             background-color: #333;
             overflow: hidden;
@@ -54,10 +52,6 @@
             display: none;
         }
 
-        .topnav .icon:hover {
-            background-color: #04AA6D;
-        }
-
         .dropdown {
             float: left;
             overflow: hidden;
@@ -73,6 +67,12 @@
             font-family: inherit;
             margin: 0;
             cursor: pointer;
+        }
+
+        .dropdown .dropbtn::after {
+            content: " \25BC"; /* Flecha hacia abajo */
+            font-size: 12px;
+            margin-left: 5px;
         }
 
         .dropdown-content {
@@ -92,7 +92,10 @@
             display: block;
             text-align: left;
         }
-        
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* Mostrar el menú desplegable al pasar el mouse */
+        }
 
         .topnav a:hover,
         .dropdown:hover .dropbtn {
@@ -159,7 +162,7 @@
         }
 
         #logo {
-            max-width: 43px;
+            max-width: 39px;
             padding: 5px;
         }
     </style>
@@ -172,9 +175,7 @@
             <a href="#QuienesSomos" onclick="closeMenu()">Quienes Somos</a>
             <a href="#QueHacemos" onclick="closeMenu()">Que Hacemos</a>
             <div class="dropdown">
-                <button class="dropbtn">Colabora
-                    <i class="fa fa-caret-down"></i>
-                </button>
+                <button class="dropbtn">Colabora</button>
                 <div class="dropdown-content">
                     <a href="#hazte-socio" onclick="closeMenu()">Hazte Socio</a>
                     <a href="#dona" onclick="closeMenu()">Dona</a>
@@ -237,25 +238,6 @@
                 x.className = "topnav";
             }
         }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const dropdown = document.querySelector(".dropdown");
-            const dropdownContent = document.querySelector(".dropdown-content");
-            const dropbtn = document.querySelector(".dropdown .dropbtn");
-
-            dropbtn.addEventListener("click", function (event) {
-                event.stopPropagation();
-                dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-            });
-
-            document.addEventListener("click", function () {
-                dropdownContent.style.display = "none";
-            });
-
-            dropdownContent.addEventListener("click", function () {
-                dropdownContent.style.display = "none";
-            });
-        });
     </script>
 </body>
 
