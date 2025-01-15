@@ -38,7 +38,6 @@
             padding: 14px 16px;
             text-decoration: none;
             font-size: 17px;
-            
         }
 
         .active {
@@ -56,7 +55,7 @@
         }
 
         .topnav .icon:hover {
-            background-color: #04AA6D; 
+            background-color: #04AA6D;
         }
 
         .dropdown {
@@ -73,6 +72,7 @@
             background-color: inherit;
             font-family: inherit;
             margin: 0;
+            cursor: pointer;
         }
 
         .dropdown-content {
@@ -92,6 +92,7 @@
             display: block;
             text-align: left;
         }
+        
 
         .topnav a:hover,
         .dropdown:hover .dropbtn {
@@ -102,10 +103,6 @@
         .dropdown-content a:hover {
             background-color: #ddd;
             color: black;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
 
         @media screen and (max-width: 600px) {
@@ -150,7 +147,6 @@
                 width: 100%;
                 text-align: left;
             }
-
         }
 
         section {
@@ -203,10 +199,6 @@
         <h2>Que Hacemos</h2>
     </section>
 
-    <section data-aos="fade-up" id="Unete">
-        <h2>Unete a Degus</h2>
-    </section>
-
     <section data-aos="fade-up" id="hazte-socio">
         <h2>Hazte socio</h2>
     </section>
@@ -232,49 +224,37 @@
 
         function myFunction() {
             var x = document.getElementById("myTopnav");
-            var activeLink = document.querySelector(".topnav .active");
-        
-            // Verifica si el menú está en su estado "normal" y lo cambia a "responsive"
             if (x.className === "topnav") {
                 x.className += " responsive";
-                if (activeLink) {
-                    activeLink.classList.add("activecolor");  // Agregar clase activecolor al enlace activo
-                }
-            } else if (x.className === "topnav responsive") {  // Verifica si el menú ya está en estado "responsive"
+            } else {
                 x.className = "topnav";
-                if (activeLink) {
-                    activeLink.classList.remove("activecolor");  // Eliminar clase activecolor al repliegue
-                }
             }
         }
-        
 
-        // Función para cerrar el menú al hacer clic en una opción, exceptuando "Colabora"
         function closeMenu() {
             var x = document.getElementById("myTopnav");
-            var activeLink = document.querySelector(".topnav .active");
-
             if (x.className === "topnav responsive") {
                 x.className = "topnav";
-                if (activeLink) {
-                    activeLink.classList.remove("activecolor");  // Eliminar clase activecolor al cerrar
-                }
             }
         }
 
-        // Función para cerrar el menú si se hace clic fuera de él
-        document.addEventListener('click', function(event) {
-            var menu = document.getElementById("myTopnav");
-            var icon = document.querySelector('.topnav .icon');
-            if (!menu.contains(event.target) && event.target !== icon) {
-                if (menu.className === "topnav responsive") {
-                    menu.className = "topnav";
-                    var activeLink = document.querySelector(".topnav .active");
-                    if (activeLink) {
-                        activeLink.classList.remove("activecolor");  // Eliminar clase activecolor al cerrar
-                    }
-                }
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdown = document.querySelector(".dropdown");
+            const dropdownContent = document.querySelector(".dropdown-content");
+            const dropbtn = document.querySelector(".dropdown .dropbtn");
+
+            dropbtn.addEventListener("click", function (event) {
+                event.stopPropagation();
+                dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+            });
+
+            document.addEventListener("click", function () {
+                dropdownContent.style.display = "none";
+            });
+
+            dropdownContent.addEventListener("click", function () {
+                dropdownContent.style.display = "none";
+            });
         });
     </script>
 </body>
