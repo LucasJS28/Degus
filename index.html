@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Degus</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -41,11 +41,20 @@
         }
 
         .active {
-            background-color: #04AA6D;
             color: white;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .activecolor {
+            background-color: #04AA6D; /* Fondo verde cuando está activo */
         }
 
         .topnav .icon {
+            display: none;
+        }
+
+        .topnav .icon:hover {
             display: none;
         }
 
@@ -140,6 +149,7 @@
                 width: 100%;
                 text-align: left;
             }
+
         }
 
         section {
@@ -150,13 +160,18 @@
             justify-content: center;
             text-align: center;
         }
+
+        #logo {
+            max-width: 43px;
+            padding: 5px;
+        }
     </style>
 </head>
 
 <body>
     <div class="menu-container">
         <div class="topnav" id="myTopnav">
-            <a href="#Degus" class="active" onclick="closeMenu()">Logo</a>
+            <a href="#Degus" class="active" onclick="closeMenu()"><img src="imagenes/logo.png" id="logo" alt=""></a>
             <a href="#QuienesSomos" onclick="closeMenu()">Quienes Somos</a>
             <a href="#QueHacemos" onclick="closeMenu()">Que Hacemos</a>
             <div class="dropdown">
@@ -216,28 +231,45 @@
 
         function myFunction() {
             var x = document.getElementById("myTopnav");
+            var activeLink = document.querySelector(".topnav .active");
+
             if (x.className === "topnav") {
                 x.className += " responsive";
+                if (activeLink) {
+                    activeLink.classList.add("activecolor");  // Agregar clase activecolor al enlace activo
+                }
             } else {
                 x.className = "topnav";
+                if (activeLink) {
+                    activeLink.classList.remove("activecolor");  // Eliminar clase activecolor al repliegue
+                }
             }
         }
 
         // Función para cerrar el menú al hacer clic en una opción, exceptuando "Colabora"
         function closeMenu() {
             var x = document.getElementById("myTopnav");
+            var activeLink = document.querySelector(".topnav .active");
+
             if (x.className === "topnav responsive") {
                 x.className = "topnav";
+                if (activeLink) {
+                    activeLink.classList.remove("activecolor");  // Eliminar clase activecolor al cerrar
+                }
             }
         }
 
-         // Función para cerrar el menú si se hace clic fuera de él
-         document.addEventListener('click', function(event) {
+        // Función para cerrar el menú si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
             var menu = document.getElementById("myTopnav");
             var icon = document.querySelector('.topnav .icon');
             if (!menu.contains(event.target) && event.target !== icon) {
                 if (menu.className === "topnav responsive") {
                     menu.className = "topnav";
+                    var activeLink = document.querySelector(".topnav .active");
+                    if (activeLink) {
+                        activeLink.classList.remove("activecolor");  // Eliminar clase activecolor al cerrar
+                    }
                 }
             }
         });
