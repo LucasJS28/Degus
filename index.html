@@ -51,6 +51,9 @@
             background-color: #04AA6D; /* Fondo verde cuando está activo */
         }
 
+        .topnav .icon {
+            display: none;
+        }
 
         .topnav .icon:hover {
             background-color: #04AA6D; 
@@ -230,19 +233,21 @@
         function myFunction() {
             var x = document.getElementById("myTopnav");
             var activeLink = document.querySelector(".topnav .active");
-
+        
+            // Verifica si el menú está en su estado "normal" y lo cambia a "responsive"
             if (x.className === "topnav") {
                 x.className += " responsive";
                 if (activeLink) {
                     activeLink.classList.add("activecolor");  // Agregar clase activecolor al enlace activo
                 }
-            } else {
+            } else if (x.className === "topnav responsive") {  // Verifica si el menú ya está en estado "responsive"
                 x.className = "topnav";
                 if (activeLink) {
                     activeLink.classList.remove("activecolor");  // Eliminar clase activecolor al repliegue
                 }
             }
         }
+        
 
         // Función para cerrar el menú al hacer clic en una opción, exceptuando "Colabora"
         function closeMenu() {
