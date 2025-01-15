@@ -180,7 +180,7 @@
     </section>
 
     <section data-aos="fade-up" id="QuienesSomos">
-        <h2>Quienes Somoss</h2>
+        <h2>Quienes Somos</h2>
     </section>
 
     <section data-aos="fade-up" id="QueHacemos">
@@ -230,6 +230,17 @@
                 x.className = "topnav";
             }
         }
+
+         // Función para cerrar el menú si se hace clic fuera de él
+         document.addEventListener('click', function(event) {
+            var menu = document.getElementById("myTopnav");
+            var icon = document.querySelector('.topnav .icon');
+            if (!menu.contains(event.target) && event.target !== icon) {
+                if (menu.className === "topnav responsive") {
+                    menu.className = "topnav";
+                }
+            }
+        });
     </script>
 </body>
 
