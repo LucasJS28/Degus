@@ -382,6 +382,30 @@
             color: #666;
             line-height: 1.6;
         }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+        }
+
+        .social-links img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
@@ -402,6 +426,7 @@
             <a href="#Noticias" onclick="closeMenu()">Noticias</a>
             <a href="#Redes" onclick="closeMenu()">Redes Sociales</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        
         </div>
     </div>
 
@@ -489,7 +514,21 @@
     </section>
 
     <section data-aos="fade-up" id="Redes">
-        <h2>Redes Sociales</h2>
+        <div class="social-links">
+            <h1>Siguenos en Nuestras Redes: </h1>
+        </div>
+        <div class="social-links">
+            <br>
+            <a href="https://www.instagram.com/tuenlace" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://wa.me/123456789" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+            <a href="https://www.facebook.com/tuenlace" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+            </a>
+        </div>
     </section>
     <!-- Footer -->
     <footer class="footer">
