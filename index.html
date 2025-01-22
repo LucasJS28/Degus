@@ -586,6 +586,73 @@
         .colabora-btn:hover {
             background-color: #333;
         }
+
+
+        /* Estilo de los modales */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 500px;
+            position: relative;
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .modal-content button {
+            padding: 10px 20px;
+            background-color: #04AA6D;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .modal-content button:hover {
+            background-color: #028a57;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #aaa;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
     </style>
 </head>
 
@@ -598,9 +665,9 @@
             <div class="dropdown">
                 <button class="dropbtn">Colabora</button>
                 <div class="dropdown-content">
-                    <a href="#hazte-socio" onclick="closeMenu()">Hazte Socio</a>
-                    <a href="#dona" onclick="closeMenu()">Dona</a>
-                    <a href="#programa-empresas" onclick="closeMenu()">Programa Empresas</a>
+                    <a href="javascript:void(0);" onclick="openModal('modal-socio')">Hazte Socio</a>
+                    <a href="javascript:void(0);" onclick="openModal('modal-dona')">Dona</a>
+                    <a href="javascript:void(0);" onclick="openModal('modal-empresas')">Programa Empresas</a>
                 </div>
             </div>
             <a href="#Noticias" onclick="closeMenu()">Noticias</a>
@@ -629,7 +696,7 @@
                 <h1>Bienvenidos a Fundación Degus</h1>
                 <p>Promovemos el desarrollo integral del ser humano a través de educación, acompañamiento y
                     microcréditos.</p>
-                <a href="#colabora" class="btn-cta">Descubre cómo colaborar</a>
+                <a href="#hazte-socio" class="btn-cta">Descubre cómo colaborar</a>
             </div>
         </div>
     </section>
@@ -687,31 +754,6 @@
         </div>
     </section>
 
-    <!-- Colabora -->
-    <section data-aos="fade-up" id="hazte-socio" class="section">
-        <div class="colabora-item">
-            <h3>Hazte Socio</h3>
-            <p>Únete a nuestra comunidad y realiza un aporte regular para continuar con nuestra misión.</p>
-            <a href="#hazte-socio" class="colabora-btn">Hazte Socio</a>
-        </div>
-    </section>
-
-    <!-- Colabora -->
-    <section data-aos="fade-up" id="dona" class="section">
-        <div class="colabora-item">
-            <h3>Dona</h3>
-            <p>Haz tu donación y contribuye a nuestro proyecto de desarrollo humano integral.</p>
-            <a href="#dona" class="colabora-btn">Dona Ahora</a>
-        </div>
-    </section>
-
-    <section data-aos="fade-up" id="programa-empresas" class="section">
-        <div class="colabora-item">
-            <h3>Programa Empresas</h3>
-            <p>Si eres parte de una empresa, puedes colaborar a través de nuestro programa empresarial.</p>
-            <a href="" class="colabora-btn">Ver Más</a>
-        </div>
-    </section>
 
     <section data-aos="fade-up" id="Noticias" class="section">
         <h2>Noticias</h2>
@@ -732,6 +774,34 @@
         </div>
     </section>
 
+
+    <!-- Modales -->
+    <div id="modal-socio" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-socio')">&times;</span>
+            <h2>Conviértete en Socio</h2>
+            <p>Únete a nuestra causa y realiza aportes mensuales que transforman vidas.</p>
+            <button onclick="alert('Gracias por tu interés!')">Únete Ahora</button>
+        </div>
+    </div>
+
+    <div id="modal-dona" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-dona')">&times;</span>
+            <h2>Apoya con tu Donación</h2>
+            <p>Haz tu contribución y ayuda a construir un futuro mejor para nuestra comunidad.</p>
+            <button onclick="alert('¡Gracias por tu donación!')">Dona con un Clic</button>
+        </div>
+    </div>
+
+    <div id="modal-empresas" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-empresas')">&times;</span>
+            <h2>Aliados Corporativos</h2>
+            <p>Colabora como empresa y sé parte del impacto positivo en nuestra sociedad.</p>
+            <button onclick="alert('¡Gracias por colaborar!')">Descubre el Programa</button>
+        </div>
+    </div>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -796,6 +866,26 @@
                 dropdownContent.style.display = "none";
             });
         });
+
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Cierra el modal al hacer clic fuera de él
+        window.onclick = function (event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target === modals[i]) {
+                    modals[i].style.display = 'none';
+                }
+            }
+        };
+
     </script>
 </body>
 
